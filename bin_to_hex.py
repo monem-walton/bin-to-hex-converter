@@ -1,4 +1,4 @@
-import binascii
+import time
 
 def line_return(file_name:str):
     with open(file_name) as f:
@@ -8,8 +8,10 @@ def line_return(file_name:str):
 def clean_data(line:str):
     line=line.replace(',','')
     line=line.replace('\n','')
-
     return line
+
+start_time=time.time()
+
 if __name__ =='__main__':
     output=''
     i=0
@@ -26,3 +28,4 @@ if __name__ =='__main__':
     with open('hex.txt','w') as f:
         f.write(output)          
     print(f'Data Written to \'hex.txt\'')
+    print(f'It took {time.time()-start_time} Seconds to execute')
